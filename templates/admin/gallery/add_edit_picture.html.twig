@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<title>
+
+			{% block title %}TheWalk : photos
+			{% endblock %}
+		</title>
+		{% block stylesheets %}
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+			<link rel="stylesheet" href="{{ asset('css/admin.css') }}"/>
+		{% endblock %}
+	</head>
+	<body>
+		{% block body %}
+
+
+			<nav>
+
+				<header>
+					<a href="{{ path('security_profile') }}">
+						<span></span>
+					</a>
+					Admin
+					<a href="{{ path('home') }}"></a>
+				</header>
+
+				<ul>
+					<li>Navigation</li>
+					<li>
+						<a href="{{ path('admin') }}">Accueil</a>
+					</li>
+					<li>
+						<a href="{{ path('users') }}">Utilisateurs</a>
+					</li>
+					<li>
+						<a href="{{ path('members') }}">Membres</a>
+					</li>
+					<li>
+						<a href="{{ path('tasks') }}">Fonctions</a>
+					</li>
+					<li>
+						<a class="active" href="{{ path('gallery') }}">Gallerie</a>
+					</li>
+					<li>
+						<a>Agenda</a>
+					</li>
+					<li>
+						<a href="{{ path('articles') }}">Articles</a>
+					</li>
+				</ul>
+
+			</nav>
+
+			<main>
+
+				<h1>Liste des photos</h1>
+			</br>
+			{% if editMode %}
+				<h2>Modification d'une photo</h2>
+			</br>
+		{% else %}
+			<h1>Ajout d'une photo</h1>
+		{% endif %}
+		{{ form_start(pictureForm) }}
+		{{ form_row(pictureForm.title) }}
+		{{ form_row(pictureForm.link) }}
+		{{ form_row(pictureForm.valider,{'attr': {'class': 'btn btn-dark'}}) }}{{ form_end(pictureForm) }}</html>
+</main>{% endblock %}</body></html>

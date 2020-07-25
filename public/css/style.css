@@ -1,0 +1,375 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
+/******** HOME ******/
+
+a,
+h2 {
+    font-family: "Gotham";
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.accueil h1 {
+    font-family: "Gotham";
+    text-transform: uppercase;
+    color: white;
+    font-size: 4em;
+}
+
+header {
+    position: fixed;
+    display: block;
+    z-index: 2;
+    width: 100%;
+    height: 50px;
+}
+
+nav.scrolling {
+    background-color: #000000eb;
+}
+
+nav a {
+    color: #e6a456;
+    text-decoration: none;
+}
+
+.menu {
+    display: none;
+}
+
+nav a:hover {
+    color: white;
+    box-shadow: 0px 2px white;
+    transition: 1s;
+}
+
+header nav li:hover {
+    animation: flotte 0.7s infinite;
+}
+
+@keyframes flotte {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+section {
+    cursor: url("../img/empreintePied.png"), default;
+}
+
+.accueil h1:after {
+    content: "";
+    width: 5px;
+    height: 212px;
+    background-color: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    -webkit-transform: rotate(45deg) translate(0%, 0%);
+    -moz-transform: rotate(45deg) translate(0%, 0%);
+    -ms-transform: rotate(45deg) translate(0%, 0%);
+    -o-transform: rotate(45deg) translate(0%, 0%);
+    transform: rotate(45deg) translate(0%, 0%);
+    -webkit-transform-origin: 100% 50%;
+    -moz-transform-origin: 100% 50%;
+    -ms-transform-origin: 100% 50%;
+    -o-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -2.5px;
+    margin-top: -106px;
+    opacity: 0;
+    -webkit-opacity: 0;
+    -moz-opacity: 0;
+}
+
+.accueil h1:hover:after {
+    -webkit-animation: comets 0.5s forwards;
+    -moz-animation: comets 0.5s forwards;
+    -ms-animation: comets 0.5s forwards;
+    animation: comets 0.5s forwards;
+}
+
+@-moz-keyframes comets {
+    0% {
+        width: 0;
+        opacity: 0;
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -webkit-transform: rotate(45deg) translate(-20%, -100%);
+        -moz-transform: rotate(45deg) translate(-20%, -100%);
+        -ms-transform: rotate(45deg) translate(-20%, -100%);
+        -o-transform: rotate(45deg) translate(-20%, -100%);
+        transform: rotate(45deg) translate(-20%, -100%);
+    }
+    50% {
+        width: 2px;
+        opacity: 1;
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+    }
+    100% {
+        width: 0%;
+        opacity: 0;
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -webkit-transform: rotate(45deg) translate(20%, 100%);
+        -moz-transform: rotate(45deg) translate(20%, 100%);
+        -ms-transform: rotate(45deg) translate(20%, 100%);
+        -o-transform: rotate(45deg) translate(20%, 100%);
+        transform: rotate(45deg) translate(20%, 100%);
+    }
+}
+
+@-webkit-keyframes comets {
+    0% {
+        width: 0;
+        opacity: 0;
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -webkit-transform: rotate(45deg) translate(-20%, -100%);
+        -moz-transform: rotate(45deg) translate(-20%, -100%);
+        -ms-transform: rotate(45deg) translate(-20%, -100%);
+        -o-transform: rotate(45deg) translate(-20%, -100%);
+        transform: rotate(45deg) translate(-20%, -100%);
+    }
+    50% {
+        width: 2px;
+        opacity: 1;
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+    }
+    100% {
+        width: 0%;
+        opacity: 0;
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -webkit-transform: rotate(45deg) translate(20%, 100%);
+        -moz-transform: rotate(45deg) translate(20%, 100%);
+        -ms-transform: rotate(45deg) translate(20%, 100%);
+        -o-transform: rotate(45deg) translate(20%, 100%);
+        transform: rotate(45deg) translate(20%, 100%);
+    }
+}
+
+@keyframes comets {
+    0% {
+        width: 0;
+        opacity: 0;
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -webkit-transform: rotate(45deg) translate(-20%, -100%);
+        -moz-transform: rotate(45deg) translate(-20%, -100%);
+        -ms-transform: rotate(45deg) translate(-20%, -100%);
+        -o-transform: rotate(45deg) translate(-20%, -100%);
+        transform: rotate(45deg) translate(-20%, -100%);
+    }
+    50% {
+        width: 2px;
+        opacity: 1;
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+    }
+    100% {
+        width: 0%;
+        opacity: 0;
+        -webkit-opacity: 0;
+        -moz-opacity: 0;
+        -webkit-transform: rotate(45deg) translate(20%, 100%);
+        -moz-transform: rotate(45deg) translate(20%, 100%);
+        -ms-transform: rotate(45deg) translate(20%, 100%);
+        -o-transform: rotate(45deg) translate(20%, 100%);
+        transform: rotate(45deg) translate(20%, 100%);
+    }
+}
+
+header li {
+    list-style: none;
+}
+
+header nav {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+header ul.navUl,
+header div {
+    display: flex;
+    width: 100%;
+}
+
+.navG {
+    justify-content: space-between;
+}
+
+.navD {
+    justify-content: flex-end;
+}
+
+.navD li:first-child {
+    margin-right: 70px;
+}
+
+.navD li:last-child {
+    margin-right: 30px;
+}
+
+section.accueil {
+    height: 100vh;
+    background-image: url("../img/home-hero-desktop.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    position: relative;
+}
+
+.accueil .fa-chevron-down {
+    font-size: 35px;
+    color: #e6a456;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    animation: flotte2 2s infinite;
+}
+
+@keyframes flotte2 {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.accueil h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -185px;
+}
+
+section.description {
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.descriptionFlex img {
+    width: 200px;
+}
+
+.descriptionFlex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.descriptionFlex article {
+    width: 50%;
+}
+
+section.description h2,
+section.membres h2 {
+    color: #e6a456;
+}
+
+section.membres {
+    background-color: white;
+}
+
+.membresFlex {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.membresFlex div {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.membresFlex img {
+    height: 300px;
+}
+
+.membresFlex div:hover img {
+    opacity: 0.1;
+}
+
+.membresFlex div:hover span {
+    opacity: 1;
+    color: #e6a456;
+    font-family: Gotham;
+    font-weight: bold;
+}
+
+.membresFlex span {
+    position: absolute;
+    opacity: 0;
+    text-align: center;
+}
+
+.membresFlex p {
+    position: absolute;
+}
+
+section.arbres {
+    height: 300px;
+    background-image: url("../img/arbres.png");
+    background-position: center bottom;
+    background-size: cover;
+    position: relative;
+    margin-top: -155px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 120px;
+    margin-top: 50px;
+}
+
+footer a {
+    color: #e6a456;
+    text-decoration: none;
+}
+
+footer img {
+    width: 30px;
+}
+
+
+/******** HOME ******/
+
+
+/******** ERROR ******/
+
+.alert.alert-success {
+    height: 47px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6a456;
+    color: white;
+    z-index: 4;
+}

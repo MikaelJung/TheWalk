@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block contenu %}
+	<style>
+		.fa-paper-plane {
+			margin-top: -10px;
+		}
+	</style>
+	<link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+	<h2>Inscription sur le site
+	</h2>
+
+	<section class="formulaire">
+
+
+		{{ form_start(form)}}
+		<i class="fas fa-user"></i>
+		{{form_row(form.firstname, {'label':'Prénom :','attr':{'placeholder':'Prénom ...'}}) }}
+		<i class="fas fa-user"></i>
+		{{form_row(form.lastname, {'label':'Nom:','attr':{'placeholder':'Nom ...'}}) }}
+		<i class="fas fa-user"></i>
+		{{form_row(form.pseudo, {'label':'Pseudo :','attr':{'placeholder':'Pseudo ...'}}) }}
+		<i class="fas fa-at"></i>
+		{{form_row(form.email, {'label':'Adresse mail :','attr':{'placeholder':'Adresse mail ...'}}) }}
+		<i class="fas fa-unlock-alt"></i>
+		{{form_row(form.password, {'label':'Mot de passe :','attr':{'placeholder':'Mot de passe ...'}}) }}
+		<i class="fas fa-unlock-alt"></i>
+		{{form_row(form.confirmPass, {'label':'Confirmation du mot de passe :','attr':{'placeholder':'Répéter votre mot de passe ...'}}) }}
+		{{form_row(form.inscription, {'label':'Inscription :'}) }}
+		<i class="fas fa-paper-plane"></i>
+
+
+		{{form_end(form)}}
+
+	</section>
+
+
+{% endblock %}

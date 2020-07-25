@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Form;
+
+use App\Entity\Message;
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
+class MessageType extends AbstractType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
+        $builder
+            ->add('text', TextareaType::class, [
+            'required' => true,
+            'attr' => ['class' =>'form-control'],
+            'label' => 'Description'
+            ])
+            ->add('ajouter', SubmitType::class, [
+            'attr' => ['class' =>'form-control'],
+            'label' => 'Ajouter'
+            ])
+        ;
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults([
+            'data_class' => Message::class,
+        ]);
+    }
+}

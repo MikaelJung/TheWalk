@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles
+{% endblock %}
+
+{% block contenu %}
+	<link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+
+	<div class="more">
+		<a href="{{ path('add_subject') }}">
+			<i class="fa fa-plus-circle fa-6" aria-hidden="true"></i>
+		</a>
+	</div>
+
+
+	<section class="cards">
+
+
+		{% for subject in subjects %}
+
+
+			<div class="card with-badge">
+				<div class="inner-wrap">
+					<h3>
+						<a><img src="/uploads/avatars/{{subject.user.avatar}}" alt="">@{{subject.user.pseudo}}</a>
+					</h3>
+					<a class="title" href="{{ path('article_show',{id : subject.id}) }}">{{subject.title}}</a>
+					<p>{{subject.description}}</p>
+
+				</div>
+				<div class="likes-bar">
+					<p>Nb personnes aime ça</p>
+				</div>
+				<div class="action-bar">
+					<ul>
+						<li class="comments">
+							<a href="{{ path('article_show',{id : subject.id}) }}">
+								<i class="fa fa-comments-o"></i>
+								<span class="comments-link">
+									Messages</span>
+							</a>
+						</li>
+						<li class="share">
+							<a href="#">
+								<i class="fa fa-slideshare"></i>
+								<span>Partager</span>
+							</a>
+						</li>
+						<li class="like">
+							<a href="#">
+								<i class="fa fa-heart-o"></i>
+								<span>Aimer</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		{% endfor %}
+	</section>
+{% endblock %}

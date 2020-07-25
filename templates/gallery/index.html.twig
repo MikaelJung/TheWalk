@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie
+{% endblock %}
+
+{% block contenu %}
+	<link rel="stylesheet" href="{{ asset('css/gallery.css') }}"/>
+
+
+	<script src="https://codepen.io/shshaw/pen/QmZYMG.js"></script>
+
+	<div id="app" data-state="gallery">
+		<div class="gallery">
+
+			{% for picture in pictures %}
+
+				<figure class="gallery-image">
+					<img src="/uploads/gallery/{{ picture.link }}" alt=""/>
+
+					<figcaption>{{ picture.title }}</figcaption>
+
+				</figure>
+			{% endfor %}
+
+		</div>
+		<div class="detail"></div>
+	</div>
+
+
+{% endblock %}

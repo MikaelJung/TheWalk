@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block contenu %}
+	<style>
+		.fa-paper-plane {
+			margin-top: 10px;
+		}
+	</style>
+	<link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+	<h2>Connexion sur le site
+	</h2>
+
+	{% if error %}
+		<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+	{% endif %}
+
+	<section class="formulaire">
+
+
+		<form action="{{ path('security_login') }}" method="post">
+			<i class="fas fa-at"></i>
+			<div class="form-group">
+				<input placeholder="Adresse mail ..." required name="_username" type="text" class="form-control" value="{{ last_username }}">
+			</div>
+			<i class="fas fa-unlock-alt"></i>
+			<div class="form-group">
+				<input placeholder="Mot de passe ..." required name="_password" type="password" class="form-control">
+			</div>
+			<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+			<div class="form-group">
+				<button type="submit" class="btn btn-success">Connexion</button>
+				<i class="fas fa-paper-plane"></i>
+			</div>
+			<div class="loginForm">
+				<a href="{{ path('forgotten_password') }}">Mot de passe oublié ?</a>
+				<a href="{{ path('security_registration') }}">S'inscrire</a>
+			</div>
+		</form>
+
+	</section>
+
+
+{% endblock %}

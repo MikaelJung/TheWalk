@@ -1,0 +1,111 @@
+header {
+    position: relative;
+    background-color: #000000eb;
+}
+
+.formulaire {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    height: 45vh;
+}
+
+h2 {
+    text-align: center;
+    margin: 50px 20px;
+    font-family: "Gotham";
+    text-transform: uppercase;
+    font-size: 2em;
+}
+
+.formulaire div {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.formulaire form {
+    width: 40%;
+}
+
+.formulaire #contact_envoyer {
+    margin-top: 10px;
+}
+
+.formulaire input,
+.formulaire textarea {
+    border: none;
+    outline: none;
+    background: none;
+    margin-left: 10%;
+    font-size: 18px;
+    opacity: 0.6;
+    border-bottom: 2px solid #e6a456;
+}
+
+.fa-comment-alt {
+    padding-top: 10px;
+}
+
+.formulaire i {
+    position: absolute;
+    font-size: 1.2em;
+}
+
+.formulaire label {
+    display: none;
+}
+
+.fa-paper-plane {
+    left: 50%;
+    padding-top: 10px;
+    color: white;
+}
+
+.formulaire {
+    cursor: pointer;
+}
+
+button {
+    width: 40%;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: white;
+    font-size: 1.6em;
+    background: #e6a456;
+    color: #e6a456;
+    box-shadow: none;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+.loginForm {
+    margin-top: 50px;
+}
+
+.loginForm a {
+    padding-top: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.loginForm a:hover {
+    color: #e6a456;
+}
+
+@media screen and (max-width: 970px) {
+    header {
+        background-color: transparent;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .formulaire div {
+        padding-left: 20px;
+    }
+}

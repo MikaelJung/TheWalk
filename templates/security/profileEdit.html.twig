@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}Modification du profil utilisateur
+{% endblock %}
+{% block contenu %}
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ asset('css/profile.css') }}"/>
+
+
+	<section class="profileEdit">
+
+		<h2>Modifier votre profil</h2>
+
+		{{ form_start(UploadForm) }}
+		{{ form_row(UploadForm.firstname) }}
+		{{ form_row(UploadForm.lastname) }}
+		{{ form_row(UploadForm.pseudo) }}
+		{{ form_row(UploadForm.avatar) }}
+		{{ form_row(UploadForm.valider,{'attr': {'class': 'btn btn-dark'}}) }}
+		{{ form_end(UploadForm) }}
+
+
+	</section>
+{% endblock %}

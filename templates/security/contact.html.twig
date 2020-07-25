@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TheWalk : Contact
+{% endblock %}
+
+
+{% block contenu %}
+	<link rel="stylesheet" href="{{ asset('css/form.css') }}"/>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+	<h2>Veuillez nous contacter</h2>
+	<section class="formulaire">
+
+		{{ form_start(ContactForm) }}
+		<i class="fas fa-user"></i>
+		{{ form_row(ContactForm.lastname) }}
+		<i class="fas fa-user"></i>
+		{{ form_row(ContactForm.firstname) }}
+		<i class="fas fa-at"></i>
+		{{ form_row(ContactForm.email) }}
+		<i class="far fa-comment-alt"></i>
+		{{ form_row(ContactForm.message) }}
+		{{ form_row(ContactForm.envoyer) }}
+		<i class="fas fa-paper-plane"></i>
+
+
+		{{ form_end(ContactForm) }}
+	</section>
+
+{% endblock %}

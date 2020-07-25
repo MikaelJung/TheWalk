@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+{% block title %}TheWalk : accueil
+{% endblock %}
+
+{% block contenu %}
+	<section class="accueil">
+		<h1>The walk</h1>
+		<a href="#description">
+			<i class="fa fa-chevron-down"></i>
+		</a>
+
+	</section>
+	<section id="description" class="description">
+		<h2>À propos</h2>
+		<div class="descriptionFlex">
+			<article>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum labore necessitatibus esse voluptate sint mollitia autem nihil eligendi tenetur sit! Maxime quod dolor dicta quibusdam consequuntur dolorum iure, eaque minus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum labore necessitatibus esse voluptate sint mollitia autem nihil eligendi tenetur sit! Maxime quod dolor dicta quibusdam consequuntur dolorum iure, eaque minus. Lorem ipsum dolor sit amet consectetur adipisicing elit.Rerum labore necessitatibus esse voluptate sint mollitia autem nihil eligendi tenetur sit! Maxime quod dolor dicta quibusdam consequuntur dolorum iure, eaque minus.
+			</article>
+			<img src="{{ asset('img/iconDescription.png') }}" alt=""/>
+		</div>
+	</section>
+	<section class="arbres"></section>
+	<section class="membres">
+		<h2>Membres</h2>
+		<div class="membresFlex">
+			{% for user in users %}
+				{% for role in user.roles %}
+					{% if role == "ROLE_MEMBER" and user.avatar is not null %}
+						<div>
+							<img src="/uploads/avatars/{{ user.avatar }}" alt=""/>
+							<span>{{ user.firstname }}
+								{{ user.lastname }}
+							</br>
+						</br>
+						{% if user.task is not null %}
+							{{ user.task.task }}
+					{% else %}
+						</span>
+					{% endif %}
+
+
+				</div>
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+
+</div></section>{% endblock %}

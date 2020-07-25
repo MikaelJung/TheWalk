@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles
+{% endblock %}
+
+{% block contenu %}
+	<link rel="stylesheet" href="{{ asset('css/articles.css') }}"/>
+
+	<section class="cards">
+
+		<div class="card with-badge messages">
+			<div class="inner-wrap">
+				<h3>
+					<a href="#"><img src="/uploads/avatars/{{subject.user.avatar}}" alt="">@{{subject.user.pseudo}}</a>
+				</h3>
+				<h2 class="title">{{subject.title}}</h2>
+				<p>{{subject.description}}</p>
+
+			</div>
+		</div>
+
+	</section>
+
+	<div class="comments2">
+		<div class="comment-wrap">
+			<div class="photo">
+				<div class="avatar" style="background-image: url('/uploads/avatars/{{app.user.avatar}}')"></div>
+
+			</div>
+			<div class="comment-block">
+				{{ form_start(messageForm) }}
+				{{ form_row(messageForm.text, {'label':'Message :','attr':{'placeholder':'Ajouter un commentaire ...'}}) }}
+				{{ form_row(messageForm.ajouter) }}
+				{{ form_end(messageForm) }}
+			</div>
+		</div>
+
+		{% for message in messages %}
+
+
+			<div class="comment-wrap">
+				<div class="photo">
+					<div class="avatar" style="background-image: url('/uploads/avatars/{{message.user.avatar}}')"></div>
+				</div>
+				<div class="comment-block">
+					<p class="comment-text">{{ message.text}}</p>
+					<div class="bottom-comment">
+						<div class="comment-date">{{ message.dateAdd | date('d/m/Y H:i:s') }}</div>
+						<ul class="comment-actions">
+							{% if app.user.id == message.user.id %}
+								<a href="{{ path('delete_message',{id:message.id}) }}" role="button" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce message ?')">
+
+									<li class="delete">Supprimer</li>
+								</a>
+							{% endif %}
+							<li class="reply">Répondre</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+
+		{% endfor %}
+	</div>
+{% endblock %}

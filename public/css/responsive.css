@@ -1,0 +1,118 @@
+    /*Ordi */
+    
+    @media screen and (max-width: 970px) {
+        .menu {
+            display: block;
+            background: #e6a456;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: .6s .4s all;
+            -webkit-animation: radioOut 1s 1;
+            -moz-animation: radioOut 1s 1;
+            -o-animation: radioOut 1s 1;
+            animation: radioOut 1s 1;
+            margin: 20px;
+        }
+        .menu .burger-icon {
+            display: block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            color: #fff;
+        }
+        .menu .burger-icon .fa {
+            transition: .6s .4s all;
+        }
+        .menu .lista-menu {
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            transition: .6s .4s all;
+        }
+        .menu .lista-menu li a {
+            width: 100%;
+            line-height: 40px;
+            font-size: 1em;
+            color: #fff;
+            list-style-type: none;
+            text-decoration: none;
+        }
+        .menu-abierto {
+            width: 200px;
+            height: 370px;
+            border-radius: 0;
+            -webkit-animation: radio 1s 1;
+            -moz-animation: radio 1s 1;
+            -o-animation: radio 1s 1;
+            animation: radio 1s 1;
+        }
+        .lista-abierta {
+            width: 100% !important;
+            height: 100% !important;
+            overflow: inherit;
+        }
+        @keyframes radio {
+            0% {
+                border-radius: 50%;
+            }
+            50% {
+                border-radius: 50%;
+            }
+            75% {
+                border-radius: 0 0 100% 0;
+            }
+            100% {
+                border-radius: 0 0 0 0;
+            }
+        }
+        @-webkit-keyframes radio {
+            0% {
+                border-radius: 50%;
+            }
+            50% {
+                border-radius: 50%;
+            }
+            75% {
+                border-radius: 0 0 100% 0;
+            }
+            100% {
+                border-radius: 0 0 0 0;
+            }
+        }
+        nav {
+            display: none !important;
+        }
+    }
+    /*Tablette */
+    
+    @media screen and (max-width: 970px) {
+        .membresFlex div {
+            width: 50%;
+        }
+    }
+    /*Téléphone */
+    
+    @media screen and (max-width: 550px) {
+        .membresFlex div {
+            width: 100%;
+        }
+        .description {
+            height: 145vh !important;
+        }
+        .descriptionFlex {
+            flex-wrap: wrap;
+        }
+        .descriptionFlex article {
+            width: 90%;
+            margin-bottom: 50px;
+        }
+        footer {
+            flex-wrap: wrap;
+        }
+        footer a {
+            width: 100%;
+            margin: 30px;
+        }
+    }

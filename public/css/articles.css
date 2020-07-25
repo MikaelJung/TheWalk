@@ -1,0 +1,375 @@
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+html {
+    box-sizing: border-box;
+}
+
+*,
+ :before,
+ :after {
+    box-sizing: inherit;
+}
+
+header {
+    background-color: #000000eb;
+    top: 0;
+}
+
+@media screen and (max-width: 970px) {
+    header {
+        background-color: transparent;
+    }
+}
+
+.fa-plus-circle {
+    font-size: 5em;
+    color: #e6a456;
+}
+
+.more {
+    margin-top: 70px;
+    margin-bottom: -60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: #F4F4F6;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+.cards {
+    margin: 1em;
+    margin-top: 90px;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+@media (min-width: 37.5em) {
+    .cards {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+    }
+}
+
+.card {
+    width: 100%;
+    margin-bottom: 1em;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 0px 1px #ddd;
+}
+
+@media (min-width: 37.5em) {
+    .card {
+        width: 49%;
+    }
+}
+
+@media (min-width: 70.5em) {
+    .card {
+        width: 24%;
+    }
+}
+
+@media (min-width: 37.5em) {
+    .card.messages {
+        width: 100%;
+    }
+}
+
+@media (min-width: 70.5em) {
+    .card.messages {
+        width: 100%;
+    }
+}
+
+.card.with-badge:after {
+    content: " ";
+    border: 30px solid #e6a456;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+
+.card .inner-wrap {
+    padding: 1.5em;
+}
+
+.card .inner-wrap p:last-of-type {
+    margin-bottom: 0;
+}
+
+.card h3 {
+    margin: 0;
+    padding-bottom: 1em;
+    font-size: .8em;
+}
+
+.card h3 a {
+    color: #000;
+}
+
+.card h3 a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.card h3 img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: .5em;
+}
+
+.card .title {
+    line-height: 1.5;
+    font-size: 1.2em;
+    display: block;
+}
+
+.card p {
+    margin-top: 1em;
+    font-size: .9em;
+    color: #777;
+    line-height: 1.6;
+}
+
+.card a {
+    color: #e6a456;
+    text-decoration: none;
+}
+
+.card a:hover,
+.card a:focus {
+    color: black;
+    text-decoration: underline;
+}
+
+.card .likes-bar {
+    border: solid 1px #eee;
+    padding: 0 1.5em;
+    border-width: 1px 0 1px 0;
+    font-size: 88%;
+}
+
+.card .likes-bar p {
+    color: #888;
+}
+
+.card .likes-bar p a:first-of-type {
+    color: #333;
+    font-weight: bold;
+}
+
+.card .likes-bar img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin-right: .5em;
+}
+
+.card .action-bar ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.card .action-bar li {
+    list-style: none;
+    float: left;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.card .action-bar li a {
+    display: block;
+    padding: 1em 0;
+    color: #666;
+}
+
+.card .action-bar li a:hover,
+.card .action-bar li a:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.card .action-bar li.comments {
+    width: 60%;
+    text-align: left;
+    padding: 0 1.5em;
+    border: solid #eee;
+    border-width: 0 1px 0 0;
+}
+
+.card .action-bar li.comments .comments-link {
+    font-size: .7em;
+    font-weight: bold;
+}
+
+.card .action-bar li.share,
+.card .action-bar li.like {
+    width: 20%;
+}
+
+.card .action-bar li.share {
+    border: solid #eee;
+    border-width: 0 1px 0 0;
+}
+
+.card .action-bar span:not(.comments-link) {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+
+/******* MESSAGE ******/
+
+input,
+textarea {
+    outline: none;
+    border: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-size: 1rem;
+    color: #555f77;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #ced2db;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #ced2db;
+}
+
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color: #ced2db;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #ced2db;
+}
+
+p {
+    line-height: 1.3125rem;
+}
+
+.comments2 {
+    margin: 2.5rem auto 0;
+    max-width: 60.75rem;
+    padding: 0 1.25rem;
+}
+
+.comment-wrap {
+    margin-bottom: 1.25rem;
+    display: table;
+    width: 100%;
+    min-height: 5.3125rem;
+}
+
+.photo {
+    padding-top: 0.625rem;
+    display: table-cell;
+    width: 3.5rem;
+}
+
+.photo .avatar {
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 50%;
+    background-size: contain;
+}
+
+.comment-block {
+    padding: 1rem;
+    background-color: #fff;
+    display: table-cell;
+    vertical-align: top;
+    border-radius: 0.1875rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.comment-block textarea {
+    width: 100%;
+    resize: none;
+}
+
+.comment-block label {
+    display: none;
+}
+
+.comment-text {
+    margin-bottom: 1.25rem;
+}
+
+.bottom-comment {
+    color: #acb4c2;
+    font-size: 0.875rem;
+}
+
+.comment-date {
+    float: left;
+}
+
+.comment-actions {
+    float: right;
+}
+
+.comment-actions li,
+.comment-actions a {
+    display: inline;
+    margin: -2px;
+    cursor: pointer;
+}
+
+.comment-actions a {
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #acb4c2;
+    font-size: 0.875rem;
+}
+
+.comment-actions li.delete {
+    padding-right: 0.75rem;
+    border-right: 1px solid #e1e5eb;
+}
+
+.comment-actions li.reply {
+    padding-left: 0.75rem;
+    padding-right: 0.125rem;
+    font-family: 'Gotham';
+}
+
+.comment-actions li:hover {
+    color: #e6a456;
+}

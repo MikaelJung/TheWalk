@@ -1,24 +1,46 @@
 security:
-    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
-    providers:
-        users_in_memory: { memory: null }
-    firewalls:
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-        main:
-            anonymous: true
-            lazy: true
-            provider: users_in_memory
+  encoders:
+    App\Entity\User:
+      algorithm: bcrypt
 
-            # activate different ways to authenticate
-            # https://symfony.com/doc/current/security.html#firewalls-authentication
+  # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+  providers:
+    # used to reload user from session & other features (e.g. switch_user)
+    app_user_provider:
+      entity:
+        class: App\Entity\User
+        property: email
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+    main:
+      anonymous: true
+      lazy: true
+      provider: app_user_provider
+      form_login:
+        login_path: security_login
+        check_path: security_login
+        default_target_path: login_success
+        csrf_token_generator: security.csrf.token_manager
+      logout:
+        path: security_logout
+        target: home
 
-            # https://symfony.com/doc/current/security/impersonating_user.html
-            # switch_user: true
+    # activate different ways to authenticate
+    # https://symfony.com/doc/current/security.html#firewalls-authentication
+    # https://symfony.com/doc/current/security/impersonating_user.html
+    # switch_user: true
 
-    # Easy way to control access for large sections of your site
-    # Note: Only the *first* access control that matches will be used
-    access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/profile, roles: ROLE_USER }
+  # Easy way to control access for large sections of your site
+  # Note: Only the *first* access control that matches will be used
+  access_control:
+    - { path: ^/admin, roles: ROLE_ADMIN }
+    - { path: ^/profil, roles: ROLE_USER }
+    - { path: ^/membre, roles: ROLE_MEMBER }
+    - { path: ^/anonyme, roles: ROLE_ANONYME }
+
+  role_hierarchy:
+    ROLE_EDITOR: ROLE_USER
+    ROLE_MEMBER: ROLE_USER
+    ROLE_ADMIN: ROLE_EDITOR
